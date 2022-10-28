@@ -3,8 +3,6 @@ name: Dart
 on:
   pull_request:
     branches: ["main", "development"]
-  push:
-    branches: ["main"]
 
 jobs:
   flutter_test:
@@ -19,8 +17,6 @@ jobs:
         with:
           channel: "stable"
       - run: flutter pub get
-      - run: flutter analyze .
-      - run: flutter test
       - run: flutter build apk
       - uses: actions/upload-artifact@v1
         with:
